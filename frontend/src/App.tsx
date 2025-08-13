@@ -1,4 +1,4 @@
-import React, { JSX, useEffect, useState } from "react";
+import React, { type JSX, useEffect, useState } from "react";
 
 export default function App(): JSX.Element {
   return (
