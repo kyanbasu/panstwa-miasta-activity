@@ -7,20 +7,20 @@
     "start": "bun run server.ts"
   },
   "dependencies": {
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
-    "ioredis": "^5.3.2",
-    "pako": "^2.1.0",
+    "@socket.io/bun-engine": "^0.0.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.9.2",
-    "uuid": "^9.0.0",
-    "ws": "^8.13.0"
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^3.0.2",
+    "@types/bun": "^1.2.20",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "typescript": "^5.9.2"
   },
   "module": "server.ts",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest"
-  }
+  "private": true
 }

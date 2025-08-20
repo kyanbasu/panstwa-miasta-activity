@@ -1,12 +1,12 @@
 import type { RouterTypes } from "bun";
-const routes: { [route: string]: RouterTypes.RouteValue<string> } = {};
+const routesMap: Map<string, RouterTypes.RouteValue<string>> = new Map();
 
 export default class Router {
   static get(route: string, call: RouterTypes.RouteValue<string>) {
-    routes[route] = call;
+    routesMap.set(route, call);
   }
 
   static getRoutes() {
-    return routes;
+    return Object.fromEntries(routesMap);
   }
 }
