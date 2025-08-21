@@ -7,7 +7,7 @@ export default function App(): JSX.Element {
 
   const [page, setPage] = useState<"loading" | "lobby" | "game">("loading");
 
-  var user: User = {
+  const testUser: User = {
     id: "1234567890",
     name: "testuser",
     avatar: "0",
@@ -15,13 +15,13 @@ export default function App(): JSX.Element {
     score: 0,
   };
 
-  const [domUser, setUser] = useState(user);
+  const [user, setUser] = useState(testUser);
 
   useEffect(() => {
-    setupSocket(user, "1234567890");
+    setupSocket(testUser, "1234567890");
 
     socket.once("authenticated", (_user: User) => {
-      user = _user;
+      setUser(_user);
       console.log("Authenticated with server as " + user.id);
       setPage("lobby");
     });
@@ -33,7 +33,7 @@ export default function App(): JSX.Element {
       <h1 className="inline">{lobbyName}</h1>
       <h1></h1>
 
-      {page === "loading" ? <h2>loading</h2> : <h2>hi {domUser.name}</h2>}
+      {page === "loading" ? <h2>loading</h2> : <h2>hi {user.name}</h2>}
     </div>
   );
 }
